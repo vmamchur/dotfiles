@@ -15,7 +15,7 @@ inner.horizontal = 4
 inner.vertical = 4
 outer.left = 0
 outer.bottom = 0
-outer.top = [{ monitor.main = 0 }, 38]
+outer.top = [{ monitor."LF27T450F" = 38 }, 0]
 outer.right = 0
 
 [key-mapping]
