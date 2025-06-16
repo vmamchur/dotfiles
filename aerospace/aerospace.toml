@@ -11,11 +11,12 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 ]
 
 [gaps]
-inner.horizontal = 4
-inner.vertical = 4
+inner.horizontal = 8
+inner.vertical = 8
+
 outer.left = 0
-outer.bottom = 0
-outer.top = [{ monitor."LF27T450F" = 38 }, 0]
+outer.bottom = -1
+outer.top = [{ monitor."LF27T450F" = 32 }, 0]
 outer.right = 0
 
 [key-mapping]
@@ -78,7 +79,7 @@ alt-e = 'layout tiles horizontal'  # horizontal split
 alt-v = 'layout tiles vertical'    # vertical split
 alt-m = 'layout accordion'  # accordion layout (fullscreen-like)
 
-# Workspace navigation (similar to your i3 tab bindings)
+# Workspace navigation
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
