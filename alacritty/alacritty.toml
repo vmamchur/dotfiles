@@ -1,11 +1,10 @@
 [window]
-opacity = 0.90
+opacity = 0.84
 decorations = "none"
-dynamic_padding = true
 
 [window.padding]
-x = 6
-y = 6
+x = 8
+y = 8
 
 [font]
 normal = { family = "GohuFont 14 Nerd Font", style = "Regular" }

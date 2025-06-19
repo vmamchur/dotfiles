@@ -1,6 +1,7 @@
 start-at-login = true
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
+on-focus-changed = "move-mouse window-lazy-center"
 
 # Run Sketchybar together with AeroSpace
 after-startup-command = ['exec-and-forget sketchybar']
@@ -14,10 +15,10 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 inner.horizontal = 8
 inner.vertical = 8
 
-outer.left = 0
-outer.bottom = -1
-outer.top = [{ monitor."LF27T450F" = 32 }, 0]
-outer.right = 0
+outer.left = 8
+outer.bottom = 7
+outer.top = [{ monitor."LF27T450F" = 40 }, 8]
+outer.right = 8
 
 [key-mapping]
 preset = 'qwerty'
