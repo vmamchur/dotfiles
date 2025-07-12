@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree position=current<CR>', desc = 'NeoTree position current', silent = true },
+    { '\\', ':Neotree reveal position=current<CR>', desc = 'NeoTree position current', silent = true },
   },
   opts = {
     filesystem = {
@@ -20,6 +20,7 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      follow_current_file = { enabled = true },
     },
   },
 }
