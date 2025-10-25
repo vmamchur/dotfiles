@@ -12,13 +12,13 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 ]
 
 [gaps]
-inner.horizontal = 8
-inner.vertical = 8
+inner.horizontal = 0
+inner.vertical = 0
 
-outer.left = 8
-outer.bottom = 7
-outer.top = [{ monitor."LF27T450F" = 40 }, 8]
-outer.right = 8
+outer.left = 0
+outer.bottom = -1
+outer.top = [{ monitor."LF27T450F" = 32 }, 0]
+outer.right = 0
 
 [key-mapping]
 preset = 'qwerty'

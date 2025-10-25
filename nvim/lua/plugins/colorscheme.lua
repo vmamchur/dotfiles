@@ -6,9 +6,8 @@ return {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'vague1k/vague.nvim',
     config = function()
-      require('vague').setup { transparent = true }
+      require('vague').setup {}
       vim.cmd 'colorscheme vague'
-      vim.cmd ':hi statusline guibg=NONE'
     end,
   },
 }

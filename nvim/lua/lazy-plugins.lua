@@ -42,8 +42,6 @@ require('lazy').setup({
   require 'plugins.neo-tree',
 
   require 'plugins.lazygit',
-
-  require 'plugins.supermaven',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
