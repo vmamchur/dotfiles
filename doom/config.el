@@ -9,32 +9,10 @@
 ;; (setq user-full-name "John Doe"
 ;;       user-mail-address "john@doe.com")
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom:
-;;
-;; - `doom-font' -- the primary font to use
-;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
-;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;; - `doom-symbol-font' -- for symbols
-;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
-;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-(setq doom-font (font-spec :family "GohuFont 14 Nerd Font" :size 14))
-
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-ir-black)
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type `relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -73,37 +51,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(use-package! treesit-auto
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
-
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
-
-(add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
-
-(setq lsp-use-plists nil)
-
-(use-package! better-jumper
-  :config
-  ;; Enable better-jumper globally
-  (better-jumper-mode +1)
-
-  ;; Context awareness: jumps are tracked per window/buffer more intuitively
-  (setq better-jumper-context 'window)
-  (setq better-jumper-add-jump-behavior 'append)
-
-  ;; We replace the standard C-o (back) and C-i (forward)
-  (map! :n "C-o" #'better-jumper-jump-backward
-        ;; NOTE: C-i is TAB in terminal. See "The C-i Fix" below.
-        :n "C-i" #'better-jumper-jump-forward))
-
-(defun +evil-center-after-scroll (&rest _)
-  "Center the cursor vertically after a scroll."
-  (evil-scroll-line-to-center nil))
-
-(advice-add 'evil-scroll-down :after #'+evil-center-after-scroll)
-(advice-add 'evil-scroll-up :after #'+evil-center-after-scroll)
+(load! "modules/ui")
+(load! "modules/editor")
+(load! "modules/lsp")
+(load! "modules/projects")
+(load! "modules/org")
