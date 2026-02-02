@@ -14,3 +14,6 @@
 
 (advice-add 'evil-scroll-down :after #'+evil-center-after-scroll)
 (advice-add 'evil-scroll-up :after #'+evil-center-after-scroll)
+
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
